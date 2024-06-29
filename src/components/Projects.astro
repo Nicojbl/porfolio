@@ -7,6 +7,7 @@ import ExpressJS from "./icons/ExpressJS.astro"
 import LinkButton from "./LinkButton.astro"
 import Cloudinary from "./icons/Cloudinary.astro"
 import Mercadopago from "./icons/Mercadopago.astro"
+import Link from "./icons/Link.astro"
 
 const TAGS = {
   TAILWIND: {
@@ -45,6 +46,7 @@ const PROJECTS = [
     title: "Ecommerce de pañales y articulos variados",
     description:
       "Es una tienda online totalmente funcional, hecha 100% por mi con el proposito de vender pañales para niños y adultos, tambien entre otros articulos del hogar. Tiene tambien secciones de administracion utilizando la api para modificar stock o los articulos de la tienda para gustos del cliente.",
+    link: "https://focaccio.vercel.app/",
     github: "https://github.com/Nicojbl/FocaccioEco",
     image: "/projects/focaccio.webp",
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.MONGODB, TAGS.EXPRESS, TAGS.CLOUDINARY, TAGS.MERCADOPAGO],
@@ -61,7 +63,7 @@ const PROJECTS = [
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, github }) => (
+    PROJECTS.map(({ image, title, description, tags, github, link }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
@@ -92,6 +94,12 @@ const PROJECTS = [
             <LinkButton href={github}>
               <GitHub class="size-6" />
               Code
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
             </LinkButton>
           )}
         </footer>
